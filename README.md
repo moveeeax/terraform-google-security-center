@@ -8,7 +8,7 @@ under which an integration reports security findings for an organization.
 
 ```hcl
 module "security_center" {
-  source = "github.com/cybercapybara/terraform-google-security-center"
+  source = "github.com/moveeeax/terraform-google-security-center"
 
   organization = "123456789012"
   display_name = "custom-scanner"
