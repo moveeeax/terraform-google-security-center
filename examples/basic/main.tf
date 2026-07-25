@@ -20,6 +20,10 @@ module "security_center" {
   organization = var.organization
   display_name = "example-source"
   description  = "Findings from the example integration"
+
+  # Without a findings editor the source is created and then never receives anything,
+  # because the reporting integration has no permission to write into it.
+  findings_editors = var.findings_editors
 }
 
 variable "project_id" {
@@ -36,6 +40,12 @@ variable "region" {
   description = "Region for the google provider."
   type        = string
   default     = "us-central1"
+}
+
+variable "findings_editors" {
+  description = "IAM principals allowed to report findings into the source, for example [\"serviceAccount:scanner@example.iam.gserviceaccount.com\"]."
+  type        = list(string)
+  default     = []
 }
 
 output "source_name" {
