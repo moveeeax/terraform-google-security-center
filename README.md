@@ -15,7 +15,7 @@ on the source (or inherits an equivalent role from the organization), every
 
 ```hcl
 module "security_center" {
-  source = "github.com/moveeeax/terraform-google-security-center"
+  source = "github.com/moveeeax/terraform-google-security-center?ref=v1.0.0"
 
   organization = "123456789012"
   display_name = "custom-scanner"
